@@ -11,8 +11,8 @@ export const personalInfo = {
   email: "krishnanekkanti04@gmail.com",
   linkedIn: "https://www.linkedin.com/in/krishnasidhvinekkanti/",
   github: "https://github.com/krishnasidhvi",
-  profileImg: "/profile.jpg",
-  avatarImg: "/avatar.png",
+  profileImg: "./profile.jpg",
+  avatarImg: "./avatar.png",
   summary: "Highly skilled Data Analyst and Engineer with a proven ability to design, build, and optimize scalable data pipelines and ETL solutions. Known for improving processing reliability by up to 30% and reducing data anomalies by 50%, with a strong focus on translating business needs into innovative, data-driven solutions. Proficient in leveraging cloud platforms such as AWS (Glue, Redshift, Lambda), Informatica, and Azure Data Factory to enhance data quality, reliability, and performance."
 };
 
