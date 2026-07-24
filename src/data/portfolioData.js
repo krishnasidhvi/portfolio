@@ -263,6 +263,22 @@ export const certifications = [
     icon: "ShieldCheck",
     verified: true,
     color: "purple"
+  },
+  {
+    name: "Execute and Evaluate Hugging Face AI Models",
+    issuer: "Hugging Face / DeepLearning.AI",
+    date: "Certified",
+    icon: "Sparkles",
+    verified: true,
+    color: "cyan"
+  },
+  {
+    name: "Build LLM Evaluation Applications with LangChain",
+    issuer: "LangChain / DeepLearning.AI",
+    date: "Certified",
+    icon: "Sparkles",
+    verified: true,
+    color: "emerald"
   }
 ];
 
