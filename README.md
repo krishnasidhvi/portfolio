@@ -1,7 +1,8 @@
 # 🚀 Krishna Sidhvi Nekkanti - Data Engineering & Analytics Portfolio
 
-[![Live Portfolio](https://img.shields.io/badge/Live%20Demo-portfolio--nks1.vercel.app-0ea5e9?style=for-the-badge&logo=vercel)](https://portfolio-nks1.vercel.app)
-[![AWS Certified](https://img.shields.io/badge/AWS-Data%20Engineer%20Associate-ff9900?style=for-the-badge&logo=amazonaws)](https://portfolio-nks1.vercel.app)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-22c55e?style=for-the-badge&logo=github)](https://krishnasidhvi.github.io/Krishna-Portfolio/)
+[![Live Portfolio](https://img.shields.io/badge/Vercel-Live%20Demo-0ea5e9?style=for-the-badge&logo=vercel)](https://portfolio-nks1.vercel.app)
+[![AWS Certified](https://img.shields.io/badge/AWS-Data%20Engineer%20Associate-ff9900?style=for-the-badge&logo=amazonaws)](https://krishnasidhvi.github.io/Krishna-Portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Krishna%20Sidhvi%20Nekkanti-0077b5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/krishnasidhvinekkanti/)
 
 > **Professional Portfolio Web Application** showcasing production data pipeline architectures, quantifiable business impact metrics, interactive PySpark/SQL ETL playgrounds, master's data science research, and printable master resume.
@@ -10,9 +11,10 @@
 
 ## 🌟 Live Public Links
 
-- **Live Deployed Portfolio**: [https://portfolio-nks1.vercel.app](https://portfolio-nks1.vercel.app)
+- **GitHub Pages Live Deployed**: [https://krishnasidhvi.github.io/Krishna-Portfolio/](https://krishnasidhvi.github.io/Krishna-Portfolio/)
+- **GitHub Repository**: [https://github.com/krishnasidhvi/Krishna-Portfolio](https://github.com/krishnasidhvi/Krishna-Portfolio)
+- **Vercel Live Deployed**: [https://portfolio-nks1.vercel.app](https://portfolio-nks1.vercel.app)
 - **Vercel Project Dashboard**: [https://vercel.com/nks1/portfolio](https://vercel.com/nks1/portfolio)
-- **GitHub Repository**: [https://github.com/krishnasidhvi/portfolio](https://github.com/krishnasidhvi/portfolio)
 
 ---
 
