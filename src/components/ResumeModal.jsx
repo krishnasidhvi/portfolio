@@ -8,7 +8,266 @@ export default function ResumeModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   const handlePrint = () => {
-    window.print();
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      alert('Please allow popups to print/save the PDF resume.');
+      return;
+    }
+
+    const resumeHtml = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <title>${personalInfo.name.replace(/\s+/g, '_')}_Resume</title>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+          
+          * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+          }
+
+          @page {
+            size: letter portrait;
+            margin: 0.4in;
+          }
+
+          body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            font-size: 9pt;
+            line-height: 1.35;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+          }
+
+          .header {
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0f172a;
+            margin-bottom: 10px;
+          }
+
+          .header h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+          }
+
+          .contact-line {
+            font-family: 'Fira Code', monospace;
+            font-size: 8pt;
+            color: #475569;
+            margin-bottom: 3px;
+          }
+
+          .links-line {
+            font-family: 'Fira Code', monospace;
+            font-size: 8pt;
+            color: #0284c7;
+          }
+
+          .links-line a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+          }
+
+          .section {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+          }
+
+          .section-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #0284c7;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1.5px solid #0284c7;
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+          }
+
+          .summary-text, .competencies-text {
+            color: #334155;
+            font-size: 8.5pt;
+            line-height: 1.35;
+          }
+
+          .skills-list {
+            list-style: none;
+            padding-left: 0;
+          }
+
+          .skills-list li {
+            font-family: 'Fira Code', monospace;
+            font-size: 8pt;
+            color: #334155;
+            margin-bottom: 2.5px;
+          }
+
+          .job-block {
+            margin-bottom: 8px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+          }
+
+          .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+          }
+
+          .job-title {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 9pt;
+            text-transform: uppercase;
+          }
+
+          .job-company {
+            color: #0284c7;
+            font-weight: 600;
+            font-size: 8.5pt;
+          }
+
+          .job-period {
+            font-family: 'Fira Code', monospace;
+            font-size: 7.5pt;
+            color: #64748b;
+          }
+
+          .bullet-list {
+            padding-left: 16px;
+            margin-top: 2px;
+          }
+
+          .bullet-list li {
+            color: #334155;
+            font-size: 8.2pt;
+            margin-bottom: 2.5px;
+            line-height: 1.3;
+          }
+
+          .edu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 8.2pt;
+            margin-bottom: 3px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1>${personalInfo.name}</h1>
+          <div class="contact-line">
+            ${personalInfo.location} • ${personalInfo.phone} • ${personalInfo.email}
+          </div>
+          <div class="links-line">
+            <a href="${personalInfo.linkedIn}" target="_blank">LinkedIn Profile</a> • 
+            <a href="${personalInfo.github}" target="_blank">GitHub Profile</a>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Summary</div>
+          <p class="summary-text">${personalInfo.summary}</p>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Core Competencies</div>
+          <p class="competencies-text">
+            Data Analysis & Management | Data Science, Governance, & Reporting | Data Quality and Integrity | Data Warehouse, Integrations, Replication | ETL Processes | Data Structures & Database Management | Consultative & Solution Selling | Risk Mitigation | Key Performance Metrics Tracking | Cross-functional Collaboration.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Technical Skills</div>
+          <ul class="skills-list">
+            <li>• <strong>Programming Languages:</strong> Python, SQL</li>
+            <li>• <strong>Cloud & Data Platforms:</strong> AWS (Glue, Redshift, Lambda), Azure Data Factory, Informatica</li>
+            <li>• <strong>Big Data & ETL:</strong> Apache Spark, Hadoop, ETL</li>
+            <li>• <strong>Data Analytics & Viz:</strong> Power BI, Tableau, Power Apps, Power Automate</li>
+            <li>• <strong>Data Integration & APIs:</strong> REST APIs, AWS Data Pipeline, Azure Fabric</li>
+            <li>• <strong>Frameworks & Libraries:</strong> Scikit-Learn, Pandas, NumPy, Matplotlib, TensorFlow, PyTorch</li>
+            <li>• <strong>Streaming:</strong> Apache Kafka</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Work Experience</div>
+          ${workExperience.map(job => `
+            <div class="job-block">
+              <div class="job-header">
+                <div>
+                  <span class="job-title">${job.role}</span>
+                  <span class="job-company">— ${job.company}, ${job.location}</span>
+                </div>
+                <span class="job-period">${job.period}</span>
+              </div>
+              <ul class="bullet-list">
+                ${job.achievements.map(ach => `<li>${ach}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="section">
+          <div class="section-title">Master's Degree Research – Data Science Projects</div>
+          ${projects.map(proj => `
+            <div class="job-block">
+              <div class="job-header">
+                <span class="job-title" style="text-transform:none;">${proj.title}</span>
+                <span class="job-period">${proj.period}</span>
+              </div>
+              <ul class="bullet-list">
+                ${proj.keyPoints.map(kp => `<li>${kp}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="section">
+          <div class="section-title">Education</div>
+          ${education.map(edu => `
+            <div class="edu-row">
+              <div>
+                <strong>${edu.institution}</strong> – ${edu.location} | <span style="color:#0284c7">${edu.degree}</span>
+              </div>
+              <span class="job-period">${edu.year}</span>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="section">
+          <div class="section-title">Certifications</div>
+          <ul class="skills-list">
+            ${certifications.map(c => `<li>• <strong>${c.name}</strong> by ${c.issuer}</li>`).join('')}
+          </ul>
+        </div>
+
+      </body>
+      </html>
+    `;
+
+    printWindow.document.write(resumeHtml);
+    printWindow.document.close();
+    printWindow.focus();
+    setTimeout(() => {
+      printWindow.print();
+      printWindow.close();
+    }, 250);
   };
 
   const handleCopyText = () => {
