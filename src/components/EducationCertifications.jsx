@@ -13,9 +13,9 @@ export default function EducationCertifications() {
   return (
     <section id="education" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
+
           {/* Education Timeline (Col 6) */}
           <div className="lg:col-span-6 space-y-8">
             <div>
