@@ -138,7 +138,7 @@ ${certifications.map(c => `• ${c.name} (${c.issuer})`).join('\n')}
               WORK EXPERIENCE
             </h2>
             {workExperience.map((job) => (
-              <div key={job.id} className="space-y-2">
+              <div key={job.id} className="space-y-2 resume-item-block">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs">
                   <div>
                     <span className="font-bold text-white uppercase text-sm">{job.role}</span>
@@ -161,7 +161,7 @@ ${certifications.map(c => `• ${c.name} (${c.issuer})`).join('\n')}
               MASTER'S DEGREE RESEARCH – DATA SCIENCE PROJECTS
             </h2>
             {projects.map((proj) => (
-              <div key={proj.id} className="space-y-2">
+              <div key={proj.id} className="space-y-2 resume-item-block">
                 <div className="flex justify-between items-center text-xs">
                   <span className="font-bold text-white text-sm">{proj.title}</span>
                   <span className="font-mono text-slate-400">{proj.period}</span>
@@ -176,7 +176,7 @@ ${certifications.map(c => `• ${c.name} (${c.issuer})`).join('\n')}
           </div>
 
           {/* Education */}
-          <div className="space-y-3">
+          <div className="space-y-3 resume-item-block">
             <h2 className="text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider border-b border-cyan-500/20 pb-1">
               EDUCATION
             </h2>
@@ -191,7 +191,7 @@ ${certifications.map(c => `• ${c.name} (${c.issuer})`).join('\n')}
           </div>
 
           {/* Certifications */}
-          <div className="space-y-2">
+          <div className="space-y-2 resume-item-block">
             <h2 className="text-sm font-mono font-bold text-cyan-400 uppercase tracking-wider border-b border-cyan-500/20 pb-1">
               CERTIFICATIONS
             </h2>
