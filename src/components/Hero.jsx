@@ -12,7 +12,9 @@ import {
   ShieldCheck, 
   Cpu, 
   Terminal,
-  Download
+  Download,
+  Briefcase,
+  MessageCircle
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -43,9 +45,11 @@ export default function Hero({ onOpenResume }) {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             {/* Status & Availability Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 shadow-inner">
+            <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300 shadow-inner">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-              <span>Available for Data Engineering & Analytics Roles</span>
+              <span className="font-semibold text-white">3+ Years Enterprise Experience</span>
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <span className="text-cyan-300">Ex-Amazon · Global Payments · Vanguard</span>
             </div>
 
             {/* Main Heading */}
@@ -66,18 +70,15 @@ export default function Hero({ onOpenResume }) {
             </p>
 
             {/* Quick Contact & Location Badges */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs font-medium text-slate-400">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2 text-xs font-medium text-slate-400">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800">
                 <MapPin className="w-4 h-4 text-cyan-400" />
                 <span>{personalInfo.location}</span>
               </div>
-              <a 
-                href={`tel:${personalInfo.phone}`}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors"
-              >
-                <Phone className="w-4 h-4 text-emerald-400" />
-                <span>{personalInfo.phone}</span>
-              </a>
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300">
+                <Briefcase className="w-4 h-4 text-emerald-400" />
+                <span>Open for Relocation & Remote</span>
+              </div>
               <a 
                 href={`mailto:${personalInfo.email}`}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:text-cyan-400 transition-colors"
@@ -88,29 +89,32 @@ export default function Hero({ onOpenResume }) {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-4">
               <a
-                href="#experience"
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all"
+                href="./Krishna_Nekkanti_Resume.pdf"
+                download="Krishna_Nekkanti_Resume.pdf"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95 transition-all"
               >
-                Explore Experience
-                <ChevronRight className="w-4 h-4" />
+                <Download className="w-4 h-4" />
+                Download ATS Resume
               </a>
 
               <button
                 onClick={onOpenResume}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-cyan-500/50 font-semibold text-sm transition-all shadow-lg"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-cyan-500/50 font-semibold text-sm transition-all shadow-lg"
               >
                 <FileText className="w-4 h-4 text-cyan-400" />
                 View Master Resume
               </button>
 
               <a
-                href="#sandbox"
-                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900/60 hover:bg-slate-900 text-cyan-300 border border-cyan-500/30 font-mono text-xs hover:border-cyan-400 transition-all"
+                href={personalInfo.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 px-4 py-3 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold text-xs transition-all hover:border-emerald-400"
               >
-                <Terminal className="w-4 h-4 text-cyan-400" />
-                ETL Playground
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                WhatsApp Connect
               </a>
             </div>
 

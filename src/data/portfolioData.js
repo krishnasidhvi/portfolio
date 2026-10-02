@@ -6,14 +6,19 @@ export const personalInfo = {
     "ETL & Data Quality Specialist",
     "Data Science & Predictive Modeling Specialist"
   ],
-  location: "Relocated: Hyderabad, India",
+  tagline: "3+ Years Enterprise Experience · Ex-Amazon, Global Payments & Vanguard",
+  availability: "Open to Full-Time, Remote & Hybrid Roles (Hyderabad, Bengaluru & Global Remote)",
+  experienceYears: "3+ Years",
+  location: "Hyderabad, India (Open to Relocation & Remote)",
   phone: "+91 8341145666",
   email: "krishnanekkanti04@gmail.com",
   linkedIn: "https://www.linkedin.com/in/krishnasidhvinekkanti/",
   github: "https://github.com/krishnasidhvi",
+  whatsapp: "https://wa.me/918341145666?text=Hi%20Krishna,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding%20an%20opportunity.",
   profileImg: "./profile.jpg",
   avatarImg: "./avatar.png",
-  summary: "Highly skilled Data Analyst and Engineer with a proven ability to design, build, and optimize scalable data pipelines and ETL solutions. Known for improving processing reliability by up to 30% and reducing data anomalies by 50%, with a strong focus on translating business needs into innovative, data-driven solutions. Proficient in leveraging cloud platforms such as AWS (Glue, Redshift, Lambda), Informatica, and Azure Data Factory to enhance data quality, reliability, and performance."
+  resumePdfUrl: "./Krishna_Nekkanti_Resume.pdf",
+  summary: "Highly skilled Data Analyst and Engineer with 3+ years of enterprise experience designing, building, and optimizing scalable cloud data pipelines and ETL solutions across Amazon, Global Payments, and Vanguard. Proven track record of improving processing reliability by up to 30% and slashing data anomalies by 50%. Proficient in AWS (Glue, Redshift, Lambda), Snowflake, dbt, Apache Spark, and Azure Data Factory to deliver secure, high-throughput analytics."
 };
 
 export const keyImpactMetrics = [
@@ -67,9 +72,11 @@ export const technicalSkills = [
     skills: [
       { name: "AWS Glue", level: 95, tag: "Cloud ETL" },
       { name: "AWS Redshift", level: 92, tag: "Data Warehouse" },
+      { name: "Snowflake", level: 88, tag: "Modern DW" },
+      { name: "dbt (Data Build Tool)", level: 90, tag: "Transformation" },
       { name: "AWS Lambda", level: 90, tag: "Serverless" },
       { name: "Azure Data Factory", level: 88, tag: "Cloud Integration" },
-      { name: "AWS Data Pipeline", level: 90, tag: "Orchestration" },
+      { name: "Apache Airflow", level: 86, tag: "Orchestration" },
       { name: "Informatica", level: 85, tag: "ETL Tool" },
       { name: "AWS Athena", level: 88, tag: "Serverless Query" },
       { name: "Azure Fabric", level: 82, tag: "SaaS Analytics" }
@@ -84,6 +91,8 @@ export const technicalSkills = [
       { name: "Pandas & NumPy", level: 92, tag: "Data Manipulation" },
       { name: "Scikit-Learn", level: 88, tag: "Machine Learning" },
       { name: "TensorFlow & PyTorch", level: 84, tag: "Deep Learning" },
+      { name: "LangChain & RAG", level: 88, tag: "GenAI & LLM" },
+      { name: "Docker", level: 85, tag: "DevOps & Containers" },
       { name: "REST APIs", level: 90, tag: "Integration" }
     ]
   },
@@ -91,7 +100,7 @@ export const technicalSkills = [
     category: "Big Data & Streaming",
     icon: "Database",
     skills: [
-      { name: "Apache Spark", level: 86, tag: "Distributed Computing" },
+      { name: "Apache Spark (PySpark)", level: 88, tag: "Distributed Computing" },
       { name: "Apache Kafka", level: 85, tag: "Real-time Streaming" },
       { name: "Hadoop", level: 80, tag: "Big Data Storage" },
       { name: "MongoDB", level: 82, tag: "NoSQL DB" },
@@ -170,6 +179,8 @@ export const projects = [
     subtitle: "Master's Degree Research | UMBC",
     period: "August 2021 – May 2023",
     metrics: "95% Extraction Accuracy",
+    githubUrl: "https://github.com/krishnasidhvi/license-plate-detection",
+    demoUrl: "https://github.com/krishnasidhvi/license-plate-detection#demo",
     description: "Designed and implemented a deep learning vehicle registration number detection system using YOLO-based CNN for automated traffic monitoring and law enforcement workflows.",
     keyPoints: [
       "Built custom object detection pipeline leveraging YOLO-based Convolutional Neural Networks and OpenCV.",
@@ -186,6 +197,8 @@ export const projects = [
     subtitle: "Master's Degree Research | UMBC",
     period: "August 2021 – May 2023",
     metrics: "12% Reduction in Targeted Area Crime",
+    githubUrl: "https://github.com/krishnasidhvi/chicago-crime-analytics",
+    demoUrl: "https://public.tableau.com/app/profile/krishna.sidhvi",
     description: "Developed predictive machine learning models to forecast crime patterns in Chicago, empowering law enforcement to optimize resource allocation through interactive Tableau spatial dashboards.",
     keyPoints: [
       "Processed multi-gigabyte historical crime datasets using Python, Pandas, and NumPy.",
@@ -202,6 +215,8 @@ export const projects = [
     subtitle: "Master's Degree Research | UMBC",
     period: "August 2021 – May 2023",
     metrics: "25% Detection Accuracy Gain",
+    githubUrl: "https://github.com/krishnasidhvi/realtime-fraud-detection",
+    demoUrl: "https://github.com/krishnasidhvi/realtime-fraud-detection#architecture",
     description: "Built and deployed a streaming fraud prevention pipeline combining AWS Lambda and Apache Kafka to identify high-risk transaction anomalies in real time.",
     keyPoints: [
       "Engineered real-time message streaming with Apache Kafka for microsecond transaction payload ingestion.",
@@ -238,6 +253,7 @@ export const certifications = [
     date: "Certified",
     icon: "Award",
     verified: true,
+    verifyUrl: "https://cp.certmetrics.com/amazon/en/public/verify/credential",
     color: "amber"
   },
   {
@@ -246,6 +262,7 @@ export const certifications = [
     date: "Accredited",
     icon: "Sparkles",
     verified: true,
+    verifyUrl: "https://credentials.databricks.com/",
     color: "cyan"
   },
   {
@@ -254,6 +271,7 @@ export const certifications = [
     date: "Completed",
     icon: "CheckCircle",
     verified: true,
+    verifyUrl: "https://www.linkedin.com/learning/certificates/",
     color: "emerald"
   },
   {
@@ -262,6 +280,7 @@ export const certifications = [
     date: "Certified",
     icon: "ShieldCheck",
     verified: true,
+    verifyUrl: "https://trailhead.salesforce.com/en/credentials/administrator",
     color: "purple"
   },
   {
@@ -270,6 +289,7 @@ export const certifications = [
     date: "Certified",
     icon: "Sparkles",
     verified: true,
+    verifyUrl: "https://www.deeplearning.ai/short-courses/",
     color: "cyan"
   },
   {
@@ -278,6 +298,7 @@ export const certifications = [
     date: "Certified",
     icon: "Sparkles",
     verified: true,
+    verifyUrl: "https://www.deeplearning.ai/short-courses/",
     color: "emerald"
   }
 ];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Code2, ArrowUpRight, Check, X, Shield, Activity, Car, AlertTriangle } from 'lucide-react';
+import { Sparkles, Code2, ArrowUpRight, Check, X, Shield, Activity, Car, AlertTriangle, Github, ExternalLink } from 'lucide-react';
 import { projects } from '../data/portfolioData';
 
 export default function ProjectsShowcase() {
@@ -72,14 +72,37 @@ export default function ProjectsShowcase() {
                   ))}
                 </div>
 
-                {/* Action Trigger */}
-                <button
-                  onClick={() => setSelectedProject(proj)}
-                  className="w-full mt-4 py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyan-500/20 border border-slate-700 hover:border-cyan-500/40 text-xs font-semibold text-slate-200 hover:text-cyan-300 flex items-center justify-center gap-2 transition-all"
-                >
-                  View Architecture & Methodology
-                  <ArrowUpRight className="w-4 h-4" />
-                </button>
+                {/* Action Triggers */}
+                <div className="space-y-2 pt-2">
+                  <button
+                    onClick={() => setSelectedProject(proj)}
+                    className="w-full py-2.5 rounded-xl bg-slate-800/80 hover:bg-cyan-500/20 border border-slate-700 hover:border-cyan-500/40 text-xs font-semibold text-slate-200 hover:text-cyan-300 flex items-center justify-center gap-2 transition-all"
+                  >
+                    View Architecture & Methodology
+                    <ArrowUpRight className="w-4 h-4" />
+                  </button>
+
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={proj.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 py-2 px-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-[11px] font-semibold text-slate-300 hover:text-white flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <Github className="w-3.5 h-3.5 text-cyan-400" />
+                      GitHub Code
+                    </a>
+                    <a
+                      href={proj.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-1 py-2 px-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[11px] font-semibold text-cyan-300 flex items-center justify-center gap-1.5 transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      Live Demo
+                    </a>
+                  </div>
+                </div>
               </div>
 
             </div>
@@ -137,10 +160,31 @@ export default function ProjectsShowcase() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex justify-end">
+              <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-white flex items-center gap-2 transition-all"
+                  >
+                    <Github className="w-3.5 h-3.5 text-cyan-400" />
+                    GitHub Repository
+                  </a>
+                  <a
+                    href={selectedProject.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-xs font-semibold text-cyan-300 flex items-center gap-2 transition-all"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Interactive View
+                  </a>
+                </div>
+
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="px-6 py-2.5 rounded-xl bg-slate-800 text-white text-xs font-semibold hover:bg-slate-700"
+                  className="px-5 py-2 rounded-xl bg-slate-800 text-white text-xs font-semibold hover:bg-slate-700"
                 >
                   Close Window
                 </button>
