@@ -179,8 +179,17 @@ export const projects = [
     subtitle: "Master's Degree Research | UMBC",
     period: "August 2021 – May 2023",
     metrics: "95% Extraction Accuracy",
-    githubUrl: "https://github.com/krishnasidhvi/license-plate-detection",
-    demoUrl: "https://github.com/krishnasidhvi/license-plate-detection#demo",
+    githubUrl: "https://github.com/krishnasidhvi/Capstone_DATA606",
+    demoUrl: "https://github.com/krishnasidhvi/Capstone_DATA606/blob/main/number_plate_detection_Final.ipynb",
+    demoLabel: "Jupyter Notebook",
+    isInternalDemo: false,
+    architectureSteps: [
+      "Input Video Stream",
+      "YOLOv8 CNN Detection",
+      "Bounding Box Crop",
+      "OCR Digit Recognition",
+      "95% Validated Extraction"
+    ],
     description: "Designed and implemented a deep learning vehicle registration number detection system using YOLO-based CNN for automated traffic monitoring and law enforcement workflows.",
     keyPoints: [
       "Built custom object detection pipeline leveraging YOLO-based Convolutional Neural Networks and OpenCV.",
@@ -197,8 +206,17 @@ export const projects = [
     subtitle: "Master's Degree Research | UMBC",
     period: "August 2021 – May 2023",
     metrics: "12% Reduction in Targeted Area Crime",
-    githubUrl: "https://github.com/krishnasidhvi/chicago-crime-analytics",
-    demoUrl: "https://public.tableau.com/app/profile/krishna.sidhvi",
+    githubUrl: "https://github.com/krishnasidhvi?tab=repositories",
+    demoUrl: null,
+    demoLabel: "Methodology Walkthrough",
+    isInternalDemo: true,
+    architectureSteps: [
+      "Multi-GB Historical Crime Ingestion",
+      "Pandas & NumPy Feature Cleaning",
+      "Random Forest & XGBoost Models",
+      "Spatial-Temporal Tactical Allocation",
+      "12% Drop in Targeted Crime"
+    ],
     description: "Developed predictive machine learning models to forecast crime patterns in Chicago, empowering law enforcement to optimize resource allocation through interactive Tableau spatial dashboards.",
     keyPoints: [
       "Processed multi-gigabyte historical crime datasets using Python, Pandas, and NumPy.",
@@ -215,8 +233,17 @@ export const projects = [
     subtitle: "Master's Degree Research | UMBC",
     period: "August 2021 – May 2023",
     metrics: "25% Detection Accuracy Gain",
-    githubUrl: "https://github.com/krishnasidhvi/realtime-fraud-detection",
-    demoUrl: "https://github.com/krishnasidhvi/realtime-fraud-detection#architecture",
+    githubUrl: "https://github.com/krishnasidhvi?tab=repositories",
+    demoUrl: null,
+    demoLabel: "Pipeline Architecture",
+    isInternalDemo: true,
+    architectureSteps: [
+      "Real-Time Transaction Stream",
+      "Apache Kafka Queue Ingestion",
+      "AWS Lambda Real-Time Scoring",
+      "MongoDB Event Store",
+      "25% Accuracy Boost (<50ms)"
+    ],
     description: "Built and deployed a streaming fraud prevention pipeline combining AWS Lambda and Apache Kafka to identify high-risk transaction anomalies in real time.",
     keyPoints: [
       "Engineered real-time message streaming with Apache Kafka for microsecond transaction payload ingestion.",

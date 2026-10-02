@@ -87,20 +87,33 @@ export default function ProjectsShowcase() {
                       href={proj.githubUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 py-2 px-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-[11px] font-semibold text-slate-300 hover:text-white flex items-center justify-center gap-1.5 transition-colors"
+                      className="flex-1 py-2 px-2 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-[11px] font-semibold text-slate-300 hover:text-white flex items-center justify-center gap-1.5 transition-colors"
+                      title={proj.id === 'license-plate' ? 'View Capstone_DATA606 on GitHub' : 'View Repositories on GitHub'}
                     >
                       <Github className="w-3.5 h-3.5 text-cyan-400" />
-                      GitHub Code
+                      {proj.id === 'license-plate' ? 'GitHub Code' : 'GitHub Repos'}
                     </a>
-                    <a
-                      href={proj.demoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 py-2 px-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[11px] font-semibold text-cyan-300 flex items-center justify-center gap-1.5 transition-colors"
-                    >
-                      <ExternalLink className="w-3.5 h-3.5" />
-                      Live Demo
-                    </a>
+                    {proj.demoUrl ? (
+                      <a
+                        href={proj.demoUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 py-2 px-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[11px] font-semibold text-cyan-300 flex items-center justify-center gap-1.5 transition-colors"
+                        title="View Interactive Jupyter Notebook"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        Notebook Demo
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => setSelectedProject(proj)}
+                        className="flex-1 py-2 px-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-[11px] font-semibold text-cyan-300 flex items-center justify-center gap-1.5 transition-colors"
+                        title="Explore Interactive Architecture Pipeline"
+                      >
+                        <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                        Live Pipeline
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -137,6 +150,27 @@ export default function ProjectsShowcase() {
                 <span className="font-bold text-sm text-white">{selectedProject.metrics}</span>
               </div>
 
+              {/* Architecture Pipeline Visualizer */}
+              {selectedProject.architectureSteps && (
+                <div className="space-y-2.5 p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                  <h4 className="text-xs font-mono uppercase text-cyan-400 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5" /> End-to-End Pipeline Architecture:
+                  </h4>
+                  <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-[11px]">
+                    {selectedProject.architectureSteps.map((step, sIdx) => (
+                      <React.Fragment key={sIdx}>
+                        <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-cyan-300">
+                          {step}
+                        </span>
+                        {sIdx < selectedProject.architectureSteps.length - 1 && (
+                          <span className="text-slate-600 font-bold">➔</span>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="space-y-3">
                 <h4 className="text-xs font-mono uppercase text-slate-400">Technical Breakdown & Impact:</h4>
                 <ul className="space-y-2.5">
@@ -161,7 +195,7 @@ export default function ProjectsShowcase() {
               </div>
 
               <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2.5">
                   <a
                     href={selectedProject.githubUrl}
                     target="_blank"
@@ -169,17 +203,19 @@ export default function ProjectsShowcase() {
                     className="px-4 py-2 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-white flex items-center gap-2 transition-all"
                   >
                     <Github className="w-3.5 h-3.5 text-cyan-400" />
-                    GitHub Repository
+                    {selectedProject.id === 'license-plate' ? 'View Capstone_DATA606 on GitHub' : 'View Code on GitHub'}
                   </a>
-                  <a
-                    href={selectedProject.demoUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-xs font-semibold text-cyan-300 flex items-center gap-2 transition-all"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    Interactive View
-                  </a>
+                  {selectedProject.demoUrl && (
+                    <a
+                      href={selectedProject.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-xs font-semibold text-cyan-300 flex items-center gap-2 transition-all"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      View Jupyter Notebook
+                    </a>
+                  )}
                 </div>
 
                 <button
